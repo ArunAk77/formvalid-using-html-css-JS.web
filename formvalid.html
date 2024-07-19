@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formvalid.web</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background: linear-gradient(rgb(0, 225, 255),rgb(255, 255, 255));
+            background-size:100%;
+            margin: 0px;
+            padding: 0px;
+            background-repeat: no-repeat;
+        }
+        .section{
+            padding-bottom: 110px;
+           
+        }
+        .container{
+            background-color:rgb(255, 255, 255);
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            width: 60%;
+            margin-top: 60px; 
+            padding: 30px;
+            border-radius:20px ;
+            box-shadow: -8px 10px 10px black;
+            transition: 5s;
+            border: 2px solid black;
+        }
+        input,textarea{
+            padding: 8px;
+            float: right;
+            border-radius: 20px;
+            width: 50%;
+            border: 2px solid black;
+        } 
+        #fname,#lname,#city,#phno,#address{
+         float: left;
+         font-size: x-large;
+         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+         font-weight: bold;
+        }
+         textarea{
+            width: 50%;
+         }
+         button{
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgb(199, 132, 51);
+            width: 60%;
+         }
+    </style>
+</head>
+<body>
+    <div class="section">
+    <div class="container">
+        <div>
+          <h1>Login</h1><br>
+          <form name="validation" action="./index.html" method="post" onsubmit="return validationform()">
+             <label id="fname" for="">Firstname :</label>
+            <input type="text" name="fname" placeholder="Firstname" required><br><br>
+            <label id="lname" for="">Lastname :</label>
+             <input type="text" name="lname" placeholder="Lastname" required><br><br>
+             <label id="city" for="">city :</label>
+             <input type="text" name="city" placeholder="city" required><br><br>
+             <label id="phno" for="">Phone number  :</label>
+             <input type="text" name="phonenumber" placeholder="Phone Number" required><br><br>
+             <label id="address"> Address :</label>
+             <textarea name="text" > Enter Your Address :
+             </textarea><br><br><br><br>
+             <button type="submit" value="submit">Submit</button>
+          </form>
+        </div>
+       </div>
+    </div>
+    <script>
+        function validationform(){
+            var fname=document.validation.fname.value;
+            var lname=document.validation.lname.value;
+            var city=document.validation.city.value;
+            var phonenumber=document.validation.phonenumber.value;
+            var text=document.validation.text.value;
+            if(fname.length<2){
+                    window.alert(" ! enter a valid firstname");
+                    return false;
+            }
+            else if(lname.length<3){
+                window.alert(" ! enter a valid lastname")
+            }
+            else if(phonenumber.length<10)
+            {
+                window.alert(" ! enter a valid phone number")
+            }
+        }
+
+    </script>
+</body>
+</html>
